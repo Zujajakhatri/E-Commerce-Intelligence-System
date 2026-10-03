@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+html, body, p, label, div, .stMarkdown { font-family: 'Outfit', sans-serif; }
+
+/* ---------- page ---------- */
+.stApp { background: #F5F3FF; }
+[data-testid="stHeader"] { background: transparent; }
+h1, h2, h3 { color: #1A1A2E; }
+
+/* ---------- sidebar ---------- */
+[data-testid="stSidebar"] {
+    background: #FFFFFF;
+    border-right: none;
+    box-shadow: 4px 0 24px rgba(124, 111, 230, 0.12);
+}
+.brand {
+    background: linear-gradient(135deg, #7C6FE6, #A99CF5);
+    border-radius: 22px; padding: 22px 18px; margin-bottom: 26px;
+    color: white; position: relative; overflow: hidden;
+}
+.brand::after {
+    content: ""; position: absolute; width: 90px; height: 90px;
+    background: #F9C5D5; border-radius: 50%; right: -25px; bottom: -35px;
+}
+.brand h2 { color: white; font-size: 1.35rem; font-weight: 700; margin: 0; letter-spacing: 2px; }
+.brand p { color: #EDE9FE; font-size: 0.85rem; margin: 4px 0 0 0; }
+.nav-title { color: #9CA3AF; font-size: 0.75rem; letter-spacing: 2px; margin: 0 0 8px 6px; }
+
+/* nav radio -> pill buttons */
+[data-testid="stSidebar"] [data-testid="stRadio"],
+[data-testid="stSidebar"] [data-testid="stRadio"] > div,
+[data-testid="stSidebar"] [role="radiogroup"] { width: 100% !important; gap: 8px; }
+[data-testid="stSidebar"] [role="radiogroup"] label {
+    background: #F5F3FF; border-radius: 14px; padding: 12px 16px; width: 100% !important; box-sizing: border-box; display: flex;
+    transition: all 0.2s ease; cursor: pointer;
+}
+[data-testid="stSidebar"] [role="radiogroup"] label > div:first-child:not(:has([data-testid="stMarkdownContainer"])),
+[data-testid="stSidebar"] [role="radiogroup"] label div:has(+ [data-testid="stMarkdownContainer"]) { display: none; }
+[data-testid="stSidebar"] [role="radiogroup"] label p { color: #1A1A2E; font-weight: 500; font-size: 1rem; }
+[data-testid="stSidebar"] [role="radiogroup"] label:hover { background: #E9E5FF; transform: translateX(4px); }
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) {
+    background: #7C6FE6; box-shadow: 0 8px 18px rgba(124, 111, 230, 0.4);
+}
+[data-testid="stSidebar"] [role="radiogroup"] label:has(input:checked) p { color: white; font-weight: 600; }
+
+/* ---------- hero banner ---------- */
+.hero {
+    background: linear-gradient(120deg, #F9C5D5 0%, #F5D0FE 50%, #DDD6FE 100%);
+    padding: 30px 34px; border-radius: 28px; margin-bottom: 24px;
+    position: relative; overflow: hidden;
+}
+.hero::before {
+    content: ""; position: absolute; width: 180px; height: 180px;
+    background: #7C6FE6; border-radius: 50%; right: -50px; top: -70px; opacity: 0.9;
+}
+.hero::after {
+    content: ""; position: absolute; width: 110px; height: 110px;
+    background: #A99CF5; border-radius: 50%; right: 110px; bottom: -60px; opacity: 0.7;
+}
+.hero h1 { color: #1A1A2E; font-size: 2.1rem; font-weight: 700; margin: 0; padding: 0; position: relative; z-index: 1; }
+.hero p { color: #4B4B63; margin: 6px 0 0 0; position: relative; z-index: 1; }
+
+/* ---------- KPI cards ---------- */
+[data-testid="stMetric"] {
+    background: white; border-radius: 22px; padding: 20px 22px;
+    box-shadow: 0 8px 24px rgba(124, 111, 230, 0.10);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+[data-testid="stMetric"]:hover { transform: translateY(-5px); box-shadow: 0 14px 30px rgba(124, 111, 230, 0.22); }
+[data-testid="stMetricLabel"] p { color: #8B8BA7; font-weight: 500; }
+[data-testid="stMetricValue"] { color: #1A1A2E; font-weight: 700; font-size: 1.4rem; }
+
+/* ---------- charts & tables ---------- */
+[data-testid="stPlotlyChart"] {
+    background: white; border-radius: 22px; padding: 12px;
+    box-shadow: 0 8px 24px rgba(124, 111, 230, 0.08);
+}
+[data-testid="stDataFrame"] {
+    border-radius: 16px; overflow: hidden;
+    box-shadow: 0 8px 24px rgba(124, 111, 230, 0.10);
+}
+
+.section {
+    font-size: 1.15rem; font-weight: 600; color: #1A1A2E;
+    margin: 22px 0 10px 0; display: flex; align-items: center; gap: 8px;
+}
+.section::before {
+    content: ""; width: 10px; height: 10px; border-radius: 50%; background: #7C6FE6;
+}
+
+/* ---------- inputs ---------- */
+.stTextArea textarea, .stNumberInput input, [data-baseweb="select"] > div {
+    border-radius: 14px !important; background: white !important;
+}
+
+/* ---------- buttons (black pill like "Add Cart") ---------- */
+.stButton > button {
+    background: #111111; color: white; border: none; border-radius: 14px;
+    padding: 12px 36px; font-weight: 600; letter-spacing: 0.5px;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2); transition: all 0.2s;
+}
+.stButton > button:hover { background: #7C6FE6; color: white; transform: translateY(-2px); }
+
+/* ---------- result cards ---------- */
+.result {
+    padding: 24px; border-radius: 24px; text-align: center;
+    font-size: 1.4rem; font-weight: 700; margin: 14px 0; color: #1A1A2E;
+}
+.result small { display: block; font-size: 0.95rem; font-weight: 400; margin-top: 6px; color: #4B4B63; }
+.red { background: #FFD6DE; border: 2px solid #F9A8B8; }
+.green { background: #D9F7E8; border: 2px solid #9AE6C0; }
+.blue { background: #E9E5FF; border: 2px solid #C4B5FD; }
+.grey { background: #F1F1F5; border: 2px solid #D4D4DE; }
+
+/* ---------- retention tips ---------- */
+.tip {
+    background: white; border-radius: 18px; padding: 16px 20px; margin: 10px 0;
+    box-shadow: 0 6px 18px rgba(124, 111, 230, 0.08); color: #4B4B63;
+    border-left: 6px solid #7C6FE6;
+}
+.tip b { color: #1A1A2E; font-size: 1.02rem; }
+
+.footer { text-align: center; color: #A1A1B5; font-size: 0.85rem; margin-top: 40px; }
+#MainMenu, footer { visibility: hidden; }
+
