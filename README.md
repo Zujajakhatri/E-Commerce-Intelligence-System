@@ -4,7 +4,7 @@
 
 An end-to-end data science project that starts from a raw SQLite database and ends with a deployed Streamlit app. It cleans the data, analyses sales with SQL, predicts customer churn and classifies review sentiment.
 
-🔗 **Live App:** [Add your Streamlit link here]
+🔗 **Live App:**(https://e-commerce-intelligence-system-f8us6ghrgtvg8ad2rk44vc.streamlit.app/)
 
 ---
 
